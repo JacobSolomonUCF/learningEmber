@@ -1,7 +1,18 @@
+<div class="jumbotron" style="color:black;background-color:#dfe3ee">
+  <h1>Recent post</h1>
+  <p>On this page you can view the most recent post on SocialChat</p>
+</div>
+
 {{#each posts as |post|}}
-  <h3>{{post.title}}</h3>
-  <p>{{post.body}}</p>
-  <p>By: {{post.userId.name}}</p>
+  <div class="panel panel-default" >
+  <div class="panel-heading" style="background-color:#dfe3ee">
+    <h3 class="panel-title" style="text-align:left">{{post.userId.name}}: {{post.title}}</h3>
+  </div>
+  <div class="panel-body" style="color:black;text-align:left">
+    {{post.body}}
+  </div>
+  </div>
+
 {{/each}}
 
 
