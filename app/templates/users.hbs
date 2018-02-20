@@ -1,0 +1,13 @@
+
+{{#each model as |user|}}
+  <h3>{{user.name}}</h3>
+  <ul>
+    <li>{{user.email}}</li>
+    <li>{{user.phone}}</li>
+    <li><a href='http://{{user.website}}'>{{user.website}}</a></li>
+
+  </ul>
+{{/each}}
+
+
+{{outlet}}
