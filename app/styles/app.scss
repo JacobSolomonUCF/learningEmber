@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+.aligned-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+.container-full {
+  margin: 0 auto;
+  width: 100%;
+}
+
 body {
   padding-top: 15px;
   background-color: #8b9dc3

@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 const {
   attr,
-  hasMany 
+  hasMany
   } = DS; //shorthand
 
 export default DS.Model.extend({
@@ -11,6 +11,9 @@ export default DS.Model.extend({
   name: attr('string'),
   email: attr('string'),
   phone: attr('string'),
-  website: attr('string')
+  website: attr('string'),
+  username: attr('string'),
+  address: attr('address'),
+  company: attr('company')
 
 });

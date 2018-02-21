@@ -6,7 +6,9 @@
 {{#each posts as |post|}}
   <div class="panel panel-default" >
   <div class="panel-heading" style="background-color:#dfe3ee">
-    <h3 class="panel-title" style="text-align:left">{{post.userId.name}}: {{post.title}}</h3>
+    <h3 class="panel-title" style="text-align:left"><a style="color:blue">
+      {{#link-to "user" post.userId.id}}@{{post.userId.username}}{{/link-to}}</a> - {{post.title}}
+    </h3>
   </div>
   <div class="panel-body" style="color:black;text-align:left">
     {{post.body}}
