@@ -7,6 +7,7 @@ const {
 
 export default DS.Model.extend({
   post: hasMany('post'),
+  photo: hasMany('photo'),
 
   name: attr('string'),
   email: attr('string'),
