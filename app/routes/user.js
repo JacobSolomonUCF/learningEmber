@@ -1,10 +1,12 @@
 import Route from '@ember/routing/route';
-import Ember from 'ember';
+import RSVP from 'rsvp';
 
 
 export default Route.extend({
   model(params) {
-  return this.get('store').findRecord('user', params.id);
+    return RSVP.hash({
+      user: this.get('store').findRecord('user', params.id),
+      post: this.store.query('post',{userId: params.id})
+    });
   }
-
 });

@@ -1,20 +1,20 @@
 <div class="row aligned-row" style="padding:10px 10px 0px 20px">
   <div class="col-md-6 jumbotron">
-    <h2 style="text-align:center;">@{{model.username}}</h2>
-    <p style="text-align:center;">{{model.name}}</p>
+    <h2 style="text-align:center;">@{{model.user.username}}</h2>
+    <p style="text-align:center;">{{model.user.name}}</p>
   </div>
   <div class="col-md-6" style="height: 247px">
     <div class="well well-sm">
-        Current Employer: {{model.company.name}}
+        Current Employer: {{model.user.company.name}}
     </div>
     <div class="well well-sm">
-        Email Address: <a href="mailto:{{model.email}}">{{model.email}}</a>
+        Email Address: <a href="mailto:{{model.user.email}}">{{model.user.email}}</a>
     </div>
     <div class="well well-sm">
-        Phone Number: {{model.phone}}
+        Phone Number: {{model.user.phone}}
     </div>
     <div class="well well-sm">
-        Website: <a href="{{model.website}}">{{model.website}}</a>
+        Website: <a href="{{model.user.website}}">{{model.user.website}}</a>
     </div>
 
   </div>
@@ -25,12 +25,16 @@
     height="250"
     frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgosHiVoIN_9sSlD6zXl6R4edttt4_LTg
-      &q={{model.address.geo.lng}},{{model.address.geo.lat}}" allowfullscreen>
+      &q={{model.user.address.geo.lng}},{{model.user.address.geo.lat}}" allowfullscreen>
   </iframe>
 </div>
 <div class="row aligned-row" style="padding:10px 10px 0px 20px">
   <div class="col-md-4">
-    <p>TEST</p>
+    {{#each model.post as |post| }}
+      <h3>{{post.title}}</h3>
+      <p>{{post.body}}</p>
+      <p>By: {{post.userId.name}}</p>
+    {{/each}}
   </div>
   <div class="col-md-4">
     IMAGE
