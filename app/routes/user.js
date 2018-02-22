@@ -8,7 +8,8 @@ export default Route.extend({
       user: this.get('store').findRecord('user', params.id),
       post: this.store.query('post',{userId: params.id}),
       album: this.store.query('album', {userId:params.id}),
-      photo: this.store.findAll('photo')
+      photo: this.store.findAll('photo'),
+      comment: this.store.findAll('comment')
 
     });
   }

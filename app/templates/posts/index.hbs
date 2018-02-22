@@ -3,7 +3,7 @@
   <p>On this page you can view the most recent post on SocialChat</p>
 </div>
 
-{{#each posts as |post|}}
+{{#each model.post as |post|}}
   <div class="panel panel-default" >
     <div class="panel-heading" style="background-color:#dfe3ee">
       <h3 class="panel-title" style="text-align:left"><a style="color:blue">
@@ -13,6 +13,20 @@
     <div class="panel-body" style="color:black;text-align:left">
       {{post.body}}
     </div>
+    {{#each post.comment as |comment|}}
+    <ul class="custom-bullet">
+      <li>
+        <div class="panel panel-default" style="padding:0px 0px 0px 0px">
+          <div class="panel-heading" style="background-color:#dfe3ee">
+            <h3 class="panel-title" style="text-align:left">{{comment.email}}</h3>
+          </div>
+          <div class="panel-body" style="color:black;text-align:left">
+            {{comment.body}}
+          </div>
+        </div>
+      </li>
+    </ul>
+    {{/each}}
   </div>
 {{/each}}
 

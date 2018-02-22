@@ -1,11 +1,12 @@
 import Route from '@ember/routing/route';
-import { set } from '@ember/object';
+import RSVP from 'rsvp';
 
 export default Route.extend({
   model(){
-    return this.store.findAll('post');
-  },
-  setupController(controller, model){
-    set(controller, 'posts', model);
+    return RSVP.hash({
+      post: this.store.findAll('post'),
+      comment: this.store.findAll('comment')
+
+    });
   }
 });

@@ -41,6 +41,20 @@
         <div class="panel-body" style="color:black;text-align:left">
           {{post.body}}
         </div>
+        {{#each post.comment as |comment|}}
+        <ul class="custom-bullet">
+          <li>
+            <div class="panel panel-default" style="padding:0px 0px 0px 0px">
+              <div class="panel-heading" style="background-color:#dfe3ee">
+                <h3 class="panel-title" style="text-align:left">{{comment.email}}</h3>
+              </div>
+              <div class="panel-body" style="color:black;text-align:left">
+                {{comment.body}}
+              </div>
+            </div>
+          </li>
+        </ul>
+        {{/each}}
       </div>
     {{/each}}
   </div>
@@ -50,18 +64,13 @@
         <div class="well well-sm">
           <h2 style="text-align:center">{{album.title}}</h2>
             <div class="row" >
-              {{#increment-for times=2}}
-                <div>How goes it?</div>
-              {{/increment-for}}
-              {{#each album.photo as |photo index|}}
-
+              {{#each album.photo as |photo|}}
               <div class="col-xs-6 col-md-3">
               <a href="" class="thumbnail" style="background-color:#3b5998">
               <img src="{{photo.thumbnailUrl}}" alt="{{photo.url}}">
               </a>
               </div>
               {{/each}}
-              {{index}}
             </div>
         </div>
       {{/each}}
