@@ -30,7 +30,7 @@
 </div>
 <div class="row aligned-row" style="padding:10px 0px 0px 5px">
   <div class="col-md-4">
-    <h3 style="text-align:center">Posts by {{model.user.username}}</h3>
+    <h1 style="text-align:center">Posts by {{model.user.username}}</h1>
     {{#each model.post as |post|}}
       <div class="panel panel-default" >
         <div class="panel-heading" style="background-color:#dfe3ee">
@@ -44,19 +44,27 @@
       </div>
     {{/each}}
   </div>
-  <div class="col-md-4">
-    <h3 style="text-align:center">Photos by {{model.user.username}}</h3>
-    {{#each model.album as |album|}}
-      {{#each model.photo as |photo|}}
+  <div class="col-md-8">
+    <h1 style="text-align:center">{{model.user.username}}'s Albums</h1>
+      {{#each model.user.album as |album|}}
         <div class="well well-sm">
-        {{photo.title}}
+          <h2 style="text-align:center">{{album.title}}</h2>
+            <div class="row" >
+              {{#increment-for times=2}}
+                <div>How goes it?</div>
+              {{/increment-for}}
+              {{#each album.photo as |photo index|}}
+
+              <div class="col-xs-6 col-md-3">
+              <a href="" class="thumbnail" style="background-color:#3b5998">
+              <img src="{{photo.thumbnailUrl}}" alt="{{photo.url}}">
+              </a>
+              </div>
+              {{/each}}
+              {{index}}
+            </div>
         </div>
-        {{/each}}
-        {{album.title}}
-    {{/each}}
-  </div>
-  <div class="col-md-4">
-    TODO
+      {{/each}}
   </div>
 </div>
 {{outlet}}
