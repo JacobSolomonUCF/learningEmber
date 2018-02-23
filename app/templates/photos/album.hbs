@@ -1,0 +1,13 @@
+<div class="well"><h1 style="text-align:center">{{model.album.title}}</h1></div>
+<div class="row equal">
+  {{#each model.photo as |photo index| }}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{photo.thumbnailUrl}}" alt="{{photo.url}}">
+      <div class="caption">
+        <p style="text-align:center">{{photo.title}}</p>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

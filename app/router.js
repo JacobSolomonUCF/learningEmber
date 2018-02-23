@@ -12,7 +12,9 @@ Router.map(function() {
   });
   this.route('users');
   this.route('user', {path: '/user/:id'});
-  this.route('photos');
+  this.route('photos', function() {
+    this.route('album', {path: '/album/:albumId'});
+  });
   this.route('albums');
 });
 

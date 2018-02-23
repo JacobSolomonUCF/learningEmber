@@ -1,5 +1,15 @@
 @import "bootstrap";
 
+.row.equal{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.thumbnail{
+  height: 90%;
+}
+
 .aligned-row {
   display: flex;
   flex-flow: row wrap;

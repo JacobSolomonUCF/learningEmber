@@ -1,5 +1,25 @@
-{{#each model as |album|}}
-  <h3>{{album.title}}</h3>
-{{/each}}
+<div class="jumbotron" style="color:black;background-color:#dfe3ee">
+  <h1>Recent albums</h1>
+  <p>On this page you can view the most albums on SocialChat</p>
+</div>
+<div class="row equal">
+  {{#each model.album as |album index|}}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        {{#each album.photo as |photo index|}}
+        {{#if (eq index 0)}}
+        <img src="{{photo.thumbnailUrl}}" alt="{{photo.url}}">
+        {{/if}}
+        {{/each}}
+        <div class="caption">
+          <h4 style="text-align:center">{{#link-to "user" album.userId.id}}@{{album.userId.username}}{{/link-to}} - {{album.title}}</h4>
+          <p style="text-align:center"><a href="photos/album/{{album.id}}" class="btn btn-primary" role="button">See photos</a></p>
+        </div>
+
+      </div>
+    </div>
+  {{/each}}
+</div>
+
 
 {{outlet}}
