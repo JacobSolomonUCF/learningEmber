@@ -1,10 +1,9 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
 const {
   attr,
   belongsTo,
-  hasMany
+  hasMany,
   } = DS; //shorthand
 
 export default DS.Model.extend({
@@ -12,6 +11,5 @@ export default DS.Model.extend({
   photo: hasMany('photo'),
 
   title: attr('string'),
-  firstPhoto: Ember.computed.alias('photo.firstObject'),
 
 });

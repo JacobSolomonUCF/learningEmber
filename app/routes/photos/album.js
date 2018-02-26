@@ -1,5 +1,4 @@
 import Route from '@ember/routing/route';
-import { set } from '@ember/object';
 import RSVP from 'rsvp';
 
 
