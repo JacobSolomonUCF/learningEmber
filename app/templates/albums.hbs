@@ -5,7 +5,7 @@
 <div class="row equal">
   {{#each model.album as |album index|}}
     <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
+      <div class="thumbnail" style="background-color:#dfe3ee">
         {{#each album.photo as |photo index|}}
         {{#if (eq index 0)}}
         <img src="{{photo.thumbnailUrl}}" alt="{{photo.url}}">

@@ -16,6 +16,7 @@ Router.map(function() {
     this.route('album', {path: '/album/:albumId'});
   });
   this.route('albums');
+  this.route('photo',{path: '/photo/:id'});
 });
 
 export default Router;

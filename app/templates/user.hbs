@@ -1,22 +1,21 @@
 <div class="row aligned-row" style="padding:10px 10px 0px 20px">
-  <div class="col-md-6 jumbotron">
+  <div class="col-md-6 jumbotron" style="background-color:#dfe3ee">
     <h2 style="text-align:center;">@{{model.user.username}}</h2>
     <p style="text-align:center;">{{model.user.name}}</p>
   </div>
-  <div class="col-md-6" style="height: 247px">
-    <div class="well well-sm">
+  <div class="col-md-6" style="height:247px">
+    <div class="well well-sm" style="background-color:#dfe3ee">
         Current Employer: {{model.user.company.name}}
     </div>
-    <div class="well well-sm">
+    <div class="well well-sm" style="background-color:#dfe3ee">
         Email Address: <a href="mailto:{{model.user.email}}">{{model.user.email}}</a>
     </div>
-    <div class="well well-sm">
+    <div class="well well-sm" style="background-color:#dfe3ee">
         Phone Number: {{model.user.phone}}
     </div>
-    <div class="well well-sm">
-        Website: <a href="{{model.user.website}}">{{model.user.website}}</a>
+    <div class="well well-sm" style="background-color:#dfe3ee">
+        Website: <a href="https://{{model.user.website}}">{{model.user.website}}</a>
     </div>
-
   </div>
 </div>
 <div class="container" style="padding:0px 35px 0px 6px">
@@ -61,12 +60,12 @@
   <div class="col-md-8">
     <h1 style="text-align:center">{{model.user.username}}'s Albums</h1>
       {{#each model.user.album as |album|}}
-        <div class="well well-sm">
+        <div class="well well-sm" style="background-color:#dfe3ee">
           <h2 style="text-align:center">{{album.title}}</h2>
             <div class="row" >
               {{#each album.photo as |photo|}}
               <div class="col-xs-6 col-md-3">
-              <a href="" class="thumbnail" style="background-color:#3b5998">
+              <a href="/photos/album/{{album.id}}" class="thumbnail" style="background-color:#3b5998">
               <img src="{{photo.thumbnailUrl}}" alt="{{photo.url}}">
               </a>
               </div>
